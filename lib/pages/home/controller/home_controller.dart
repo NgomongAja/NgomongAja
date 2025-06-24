@@ -16,9 +16,7 @@ class HomeController extends GetxController {
         .from('threads')
         .stream(primaryKey: ['id'])
         .order('created_at', ascending: false)
-        .map((data) => data
-            .map((e) => ThreadModel.fromJson(e))
-            .toList())
+        .map((data) => data.map((e) => ThreadModel.fromJson(e)).toList())
         .listen((newList) {
           threads.value = newList;
         });

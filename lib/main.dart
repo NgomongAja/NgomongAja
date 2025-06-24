@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pengen_chat/common/config/supabase.dart';
-import 'package:pengen_chat/home/view/home_view.dart';
+import 'pages/mainTabBar/mainTabBar.dart';
 
-Future<void> main() async{
-
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SupabaseConfig.instance.initialization();
 
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: HomeView(),
+      home: MainTabBar(),
     );
   }
 }

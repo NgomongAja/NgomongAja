@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pengen_chat/common/utils/date_utils.dart';
-import 'package:pengen_chat/home/controller/home_controller.dart';
+import 'package:pengen_chat/pages/home/controller/home_controller.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
