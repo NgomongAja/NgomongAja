@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pengen_chat/pages/likes/likes_page.dart';
-import 'package:pengen_chat/pages/mainTabBar/mainTabBar_controller/mainTabBar_controller.dart';
+import 'package:pengen_chat/pages/maintab/controller/maintab_controller.dart';
 import 'package:pengen_chat/pages/message/message_page.dart';
 import 'package:pengen_chat/pages/recent/recent_page.dart';
-import 'package:pengen_chat/pages/trending/trending_page.dart';
+import 'package:pengen_chat/pages/trending/presentation/trending_view.dart';
 
 class MainTabBar extends StatelessWidget {
   const MainTabBar({super.key});
@@ -28,7 +28,7 @@ class MainTabBar extends StatelessWidget {
       body: TabBarView(
         controller: tabController.tabController,
         children: const [
-          TrendingPage(),
+          TrendingView(),
           RecentPage(),
           LikesPage(),
           MessagePage(),

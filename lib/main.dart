@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pengen_chat/common/config/supabase.dart';
-import 'pages/mainTabBar/mainTabBar.dart';
+import 'pages/maintab/maintab.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

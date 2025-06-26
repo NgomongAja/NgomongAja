@@ -4,6 +4,7 @@ class ThreadModel {
   int? likeCount;
   String? title;
   String? userId;
+  String? nickname;
 
  ThreadModel(
       {this.createdAt, this.id, this.likeCount, this.title, this.userId});
@@ -14,6 +15,7 @@ class ThreadModel {
     likeCount = json['like_count'];
     title = json['title'];
     userId = json['user_id'];
+    nickname = json['nickname'];
   }
 
   Map<String, dynamic> toJson() {
@@ -23,6 +25,7 @@ class ThreadModel {
     data['like_count'] = this.likeCount;
     data['title'] = this.title;
     data['user_id'] = this.userId;
+    data['nickname'] = this.nickname;
     return data;
   }
 }
