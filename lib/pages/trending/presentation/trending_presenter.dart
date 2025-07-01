@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:pengen_chat/common/config/supabase.dart';
 import 'package:pengen_chat/common/ui/general_bottomsheet.dart';
 import 'package:pengen_chat/common/ui/snackbar_helper.dart';
+import 'package:pengen_chat/pages/trending/presentation/data/thread_service.dart';
 import 'package:pengen_chat/pages/trending/presentation/widget/thread_input.dart';
 import '../models/thread_model.dart';
 
@@ -10,6 +11,8 @@ class TrendingPresenter extends GetxController {
 
   var isLoading = true.obs; // gw siapin buat loading atau shimmer
   var threadInputValue = "".obs;
+
+  ThreadService threadRepository = ThreadService();
 
   @override
   void onInit() {
@@ -46,11 +49,7 @@ class TrendingPresenter extends GetxController {
   Future<void> createNewThread(String title) async {
     isLoading.value = true;
     try {
-      await SupabaseConfig.instance.supabaseClient.from('threads').insert({
-        'title': title,
-        'user_id':
-            "00000000-0000-0000-0000-000000000002", // ini nanti ambil user id hasil dari auth ges
-      });
+      await threadRepository.addNewThread(title, "00000000-0000-0000-0000-000000000002");
     } catch (e) {
       SnackbarHelper.error(e.toString());
     } finally {

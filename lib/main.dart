@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pengen_chat/common/config/supabase.dart';
+import 'package:pengen_chat/common/presenter/app_presenter.dart';
+import 'package:pengen_chat/pages/onboarding/presentation/onboarding_view.dart';
 import 'pages/maintab/maintab.dart';
 
 Future<void> main() async {
@@ -15,13 +17,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Pengen Chat',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: MainTabBar(),
-    );
+    final appPresenter = Get.put(AppPresenter());
+
+    return Obx(() {
+      return GetMaterialApp(
+        title: 'Pengen Chat',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        ),
+        home: appPresenter.isLoggedIn.value ? MainTabBar() : OnboardingView(),
+      );
+    });
   }
 }
