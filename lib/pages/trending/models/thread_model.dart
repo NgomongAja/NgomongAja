@@ -19,13 +19,13 @@ class ThreadModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['created_at'] = this.createdAt;
-    data['id'] = this.id;
-    data['like_count'] = this.likeCount;
-    data['title'] = this.title;
-    data['user_id'] = this.userId;
-    data['nickname'] = this.nickname;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['created_at'] = createdAt;
+    data['id'] = id;
+    data['like_count'] = likeCount;
+    data['title'] = title;
+    data['user_id'] = userId;
+    data['nickname'] = nickname;
     return data;
   }
 }

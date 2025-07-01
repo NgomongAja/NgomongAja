@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pengen_chat/common/utils/date_utils.dart';
+import 'package:pengen_chat/common/utils/date_util.dart';
 import 'package:pengen_chat/pages/trending/presentation/trending_presenter.dart';
 
 // ignore: must_be_immutable

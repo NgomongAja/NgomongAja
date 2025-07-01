@@ -40,7 +40,7 @@ class _TrendingViewState extends State<TrendingView> {
 
   Widget _buildCreateThreadSection() {
     return InkWell(
-      onTap: () => presenter.addNewThread(),
+      onTap: () => presenter.openNewThreadForm(),
       child: Column(
         children: [
           Padding(
