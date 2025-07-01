@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pengen_chat/common/utils/date_utils.dart';
 import 'package:pengen_chat/pages/trending/presentation/trending_presenter.dart';
 import 'package:pengen_chat/pages/trending/presentation/widget/trending_list.dart';
 
@@ -21,7 +20,7 @@ class _TrendingViewState extends State<TrendingView> {
       body: TrendingListWidget(presenter: presenter),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          presenter.addNewThread();
+          presenter.openNewThreadForm();
         },
         backgroundColor: Colors.black,
         shape: const CircleBorder(),
