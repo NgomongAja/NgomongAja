@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pengen_chat/pages/trending/presentation/trending_presenter.dart';
-import 'package:pengen_chat/pages/trending/presentation/widget/trending_list.dart';
+import 'package:pengen_chat/features/thread/presentation/controllers/trending_controller.dart';
+import 'package:pengen_chat/features/thread/presentation/widget/thread_list_widget.dart';
 
-class TrendingView extends StatefulWidget {
-  const TrendingView({super.key});
+class TrendingPage extends StatefulWidget {
+  const TrendingPage({super.key});
 
   @override
-  State<TrendingView> createState() => _TrendingViewState();
+  State<TrendingPage> createState() => _TrendingPageState();
 }
 
-class _TrendingViewState extends State<TrendingView> {
-  final TrendingPresenter presenter = Get.put(TrendingPresenter());
+class _TrendingPageState extends State<TrendingPage> {
+  final TrendingController trendingController = Get.put(TrendingController());
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +24,14 @@ class _TrendingViewState extends State<TrendingView> {
       body: Column(
         children: [
           _buildCreateThreadSection(),
-          Expanded(child: TrendingListWidget(presenter: presenter)),
+          Expanded(
+            child: ThreadListWidget(threads: trendingController.trendings),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          presenter.openNewThreadForm();
+          trendingController.openNewThreadForm();
         },
         backgroundColor: Colors.black,
         shape: const CircleBorder(),
@@ -40,7 +42,7 @@ class _TrendingViewState extends State<TrendingView> {
 
   Widget _buildCreateThreadSection() {
     return InkWell(
-      onTap: () => presenter.openNewThreadForm(),
+      onTap: () => trendingController.openNewThreadForm(),
       child: Column(
         children: [
           Padding(

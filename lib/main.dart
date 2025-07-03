@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pengen_chat/common/config/supabase.dart';
 import 'package:pengen_chat/common/presenter/app_presenter.dart';
-import 'package:pengen_chat/pages/onboarding/presentation/onboarding_view.dart';
-import 'pages/maintab/maintab.dart';
+import 'package:pengen_chat/features/onboarding/presentation/onboarding_view.dart';
+import 'features/maintab/maintab.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

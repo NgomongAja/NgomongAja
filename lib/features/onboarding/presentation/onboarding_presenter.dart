@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pengen_chat/pages/maintab/maintab.dart';
+import 'package:pengen_chat/features/maintab/maintab.dart';
 
 class OnboardingPresenter extends GetxController {
   final pageController = PageController();
