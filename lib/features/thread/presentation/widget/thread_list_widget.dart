@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pengen_chat/common/utils/date_util.dart';
-import 'package:pengen_chat/pages/trending/presentation/trending_presenter.dart';
+import 'package:pengen_chat/features/thread/domain/model/thread_model.dart';
 
 // ignore: must_be_immutable
-class TrendingListWidget extends StatelessWidget {
-  TrendingPresenter presenter;
-  TrendingListWidget({super.key, required this.presenter});
+class ThreadListWidget extends StatelessWidget {
+  List<ThreadModel> threads;
+  ThreadListWidget({super.key, required this.threads});
 
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      if (presenter.threads.isEmpty) {
+      if (threads.isEmpty) {
         return const Center(child: Text("Belum ada thread bro 😴"));
       }
 
       return ListView.builder(
-        itemCount: presenter.threads.length,
+        itemCount: threads.length,
         itemBuilder: (context, index) {
-          final thread = presenter.threads[index];
+          final thread = threads[index];
           return Container(
             margin: EdgeInsets.symmetric(vertical: 8),
             child: Column(

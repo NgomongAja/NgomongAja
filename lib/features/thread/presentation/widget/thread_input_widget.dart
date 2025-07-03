@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pengen_chat/pages/trending/presentation/trending_presenter.dart';
+import 'package:pengen_chat/features/thread/presentation/controllers/trending_controller.dart';
 
 // ignore: must_be_immutable
-class ThreadInput extends StatelessWidget {
-  TrendingPresenter trendingPresenter;
-  ThreadInput({super.key, required this.trendingPresenter});
+class ThreadInputWidget extends StatelessWidget {
+  TrendingController trendingController;
+  ThreadInputWidget({super.key, required this.trendingController});
 
   @override
   Widget build(BuildContext context) {
@@ -39,17 +39,17 @@ class ThreadInput extends StatelessWidget {
               TextField(
                 decoration: InputDecoration(hintText: "What's on your mind?"),
                 onChanged: (value) =>
-                    trendingPresenter.threadInputValue.value = value,
+                    trendingController.threadInputValue.value = value,
               ),
               SizedBox(height: 16),
               ElevatedButton(
-                onPressed: trendingPresenter.threadInputValue.value.isEmpty
+                onPressed: trendingController.threadInputValue.value.isEmpty
                     ? null
                     : () {
-                        trendingPresenter.createNewThread(
-                          trendingPresenter.threadInputValue.value,
+                        trendingController.createNewThread(
+                          trendingController.threadInputValue.value,
                         );
-                        trendingPresenter.threadInputValue.value = "";
+                        trendingController.threadInputValue.value = "";
                       },
                 child: Text("Post"),
               ),

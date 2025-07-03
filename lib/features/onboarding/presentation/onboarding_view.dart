@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pengen_chat/pages/onboarding/presentation/onboarding_presenter.dart';
+import 'package:pengen_chat/features/onboarding/presentation/onboarding_presenter.dart';
 
 class OnboardingView extends StatelessWidget {
   OnboardingView({super.key});
