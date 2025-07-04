@@ -23,7 +23,7 @@ class _TrendingPageState extends State<TrendingPage> {
       ),
       body: Column(
         children: [
-          _buildCreateThreadSection(),
+          // _buildCreateThreadSection(),
           Expanded(
             child: ThreadListWidget(threads: trendingController.trendings),
           ),

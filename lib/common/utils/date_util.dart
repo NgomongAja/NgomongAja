@@ -6,17 +6,17 @@ class DateUtil {
     if (difference.inSeconds < 60) {
       return 'baru saja';
     } else if (difference.inMinutes < 60) {
-      return '${difference.inMinutes} menit yang lalu';
+      return '${difference.inMinutes}m';
     } else if (difference.inHours < 24) {
-      return '${difference.inHours} jam yang lalu';
+      return '${difference.inHours}h';
     } else if (difference.inDays < 7) {
-      return '${difference.inDays} hari yang lalu';
+      return '${difference.inDays}d';
     } else if (difference.inDays < 30) {
-      return '${(difference.inDays / 7).floor()} minggu yang lalu';
+      return '${(difference.inDays / 7).floor()}w';
     } else if (difference.inDays < 365) {
-      return '${(difference.inDays / 30).floor()} bulan yang lalu';
+      return '${(difference.inDays / 30).floor()}m';
     } else {
-      return '${(difference.inDays / 365).floor()} tahun yang lalu';
+      return '${(difference.inDays / 365).floor()}y';
     }
   }
 

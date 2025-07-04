@@ -6,10 +6,16 @@ class ThreadModel {
   String? userId;
   String? nickname;
 
- ThreadModel(
-      {this.createdAt, this.id, this.likeCount, this.title, this.userId, this.nickname});
+  ThreadModel({
+    this.createdAt,
+    this.id,
+    this.likeCount,
+    this.title,
+    this.userId,
+    this.nickname,
+  });
 
- ThreadModel.fromJson(Map<String, dynamic> json) {
+  ThreadModel.fromJson(Map<String, dynamic> json) {
     createdAt = json['created_at'];
     id = json['id'];
     likeCount = json['like_count'];
